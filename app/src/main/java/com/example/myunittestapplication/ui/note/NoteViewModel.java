@@ -11,6 +11,8 @@ import com.example.myunittestapplication.ui.Resource;
 
 import javax.inject.Inject;
 
+//
+
 import static com.example.myunittestapplication.repository.NoteRepository.NOTE_TITLE_NULL;
 
 public class NoteViewModel extends ViewModel {
