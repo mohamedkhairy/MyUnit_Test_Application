@@ -21,12 +21,13 @@ import java.time.Instant;
 import io.reactivex.Flowable;
 import io.reactivex.internal.operators.single.SingleToFlowable;
 
+import static com.example.myunittestapplication.repository.NoteRepository.INSERT_FAILURE;
 import static com.example.myunittestapplication.repository.NoteRepository.INSERT_SUCCESS;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
-//@ExtendWith(InstantExecutorExtension.class)
+@ExtendWith(InstantExecutorExtension.class)
 public class NoteViewModelTest {
 
 
@@ -102,7 +103,7 @@ public class NoteViewModelTest {
         //Assert
         verify(noteRepository).insertNote(any(Note.class));
         verifyNoMoreInteractions(noteRepository);
-        assertEquals(Resource.success(insertedRow , INSERT_SUCCESS) , resource);
+        assertEquals(Resource.success(insertedRow , INSERT_FAILURE) , resource);
 
     }
 
