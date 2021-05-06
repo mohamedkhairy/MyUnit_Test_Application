@@ -19,14 +19,12 @@ jobs:
           java-version: 1.8
 #      - name: Unit tests
 #        run: bash ./gradlew test --stacktrace
+        - name: Unit Test
+          run: ./gradlew testDebugUnitTest
 
-          # Execute unit tests
-          - name: Unit Test
-            run: ./gradlew testDebugUnitTest
-
-          - name: Android Test Report
-            uses: asadmansr/android-test-report-action@v1.2.0
-            if: ${{ always() }} # IMPORTANT: run Android Test Report regardless
+        - name: Android Test Report
+          uses: asadmansr/android-test-report-action@v1.2.0
+          if: ${{ always() }} # IMPORTANT: run Android Test Report regardless
 
   apk:
     name: Generate APK
